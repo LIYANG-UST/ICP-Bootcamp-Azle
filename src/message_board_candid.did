@@ -1,0 +1,10 @@
+service: () -> {
+    addStableMessage: (record {body:text}) -> (variant {Ok:record {id:text; body:text; createdAt:nat64; updatedAt:opt nat64}; Err:variant {InvalidPayload:text; NotFound:text}});
+    deleteStableMessage: (text) -> (variant {Ok:record {id:text; body:text; createdAt:nat64; updatedAt:opt nat64}; Err:variant {InvalidPayload:text; NotFound:text}});
+    getMessage: () -> (text) query;
+    getNumber: () -> (nat64) query;
+    getStableMessage: (text) -> (variant {Ok:record {id:text; body:text; createdAt:nat64; updatedAt:opt nat64}; Err:variant {InvalidPayload:text; NotFound:text}}) query;
+    getStableMessages: () -> (variant {Ok:vec record {id:text; body:text; createdAt:nat64; updatedAt:opt nat64}; Err:variant {InvalidPayload:text; NotFound:text}}) query;
+    setMessage: (text, nat64) -> ();
+    updateStableMessage: (text, record {body:text}) -> (variant {Ok:record {id:text; body:text; createdAt:nat64; updatedAt:opt nat64}; Err:variant {InvalidPayload:text; NotFound:text}});
+}

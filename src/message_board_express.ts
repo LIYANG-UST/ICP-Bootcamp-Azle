@@ -24,7 +24,6 @@ class Message {
     id: string;
     title: string;
     body: string;
-    attachmentURL: string;
     createdAt: Date;
     updatedAt: Date | null
 }
